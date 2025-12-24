@@ -1,39 +1,16 @@
-# Hospital Management System (HMS)
+# Hospital Management System
 
-Hi! This is my first full-stack project, built after learning the fundamentals of Web Development and DBMS. [cite_start]I created this system to simplify the communication between hospital administrators, doctors, and patients[cite: 9].
+This is my first project in Web Development, built after learning the basics of Web and DBMS. [cite_start]The system includes three separate dashboards for the Admin, Doctors, and Patients[cite: 9]. [cite_start]The main feature is the appointment booking system, where doctors set their availability for the next 7 days and patients can book morning or evening slots accordingly[cite: 13, 20]. [cite_start]The application also supports secure login and the storage of patient medical records[cite: 10].
 
-## 🏥 About the Project
-[cite_start]The application is a comprehensive management tool that supports secure user authentication and role-based access[cite: 10]. It features three distinct dashboards:
-* [cite_start]**Admin Dashboard:** For high-level system oversight[cite: 9].
-* [cite_start]**Doctor Dashboard:** For managing schedules and patient records[cite: 13, 18].
-* [cite_start]**Patient Dashboard:** For booking appointments and viewing medical history[cite: 13, 18].
+## Technologies Used
+* [cite_start]Flask [cite: 13]
+* [cite_start]SQLAlchemy [cite: 13]
+* [cite_start]Jinja2 [cite: 13]
+* [cite_start]Bootstrap 5 [cite: 13]
+* [cite_start]SQLite [cite: 13]
 
-The "highlight" feature is the **Smart Appointment System**. [cite_start]Doctors can set their availability for upcoming dates, and patients can seamlessly book morning or evening slots based on that real-time data[cite: 13, 20].
-
-## 🛠️ Tech Stack
-* [cite_start]**Backend:** Python-Flask [cite: 13]
-* [cite_start]**Database:** SQLite with SQLAlchemy ORM [cite: 13]
-* [cite_start]**Frontend:** Bootstrap 5, Jinja2, HTML, and CSS [cite: 6, 13]
-* [cite_start]**Scheduling:** Python DateTime module [cite: 13]
-
-## 🧠 Key Learnings
-Building this project from scratch taught me several core concepts:
-* [cite_start]**Relational Database Design:** I learned how to structure data using One-to-Many relationships, such as linking departments to doctors and patients to their specific appointment history[cite: 21, 22, 23].
-* [cite_start]**CRUD Implementation:** I gained experience performing Create, Read, Update, and Delete operations—from registering new users to logging complex medical records like diagnoses and prescriptions[cite: 18, 27].
-* [cite_start]**Role-Based Logic:** I implemented logic to ensure that different users see only the data relevant to them, managed through backend session handling[cite: 10, 16].
-* [cite_start]**Scheduling Logic:** I used the DateTime module to handle time-slot logic, ensuring that morning and evening availability is tracked accurately for every doctor[cite: 13, 52, 54].
-
-## 📂 Database Schema
-[cite_start]The system is built on a relational backend with the following key tables[cite: 11, 15]:
-* [cite_start]**User:** Handles authentication, roles (Admin/Doctor/Patient), and status[cite: 16, 17].
-* [cite_start]**Department:** Organizes hospital specializations[cite: 18].
-* [cite_start]**Appointments:** Stores all visit details, including symptoms, tests done, and medicine prescribed[cite: 18, 27].
-* [cite_start]**DoctorAvailability:** Tracks specific date-based slots for the medical staff[cite: 19, 20].
-
-## 🚀 Getting Started
-1. **Clone the repository:**
-   git clone https://github.com/your-username/hms-project.git
-2. **Install dependencies:**
-   pip install flask flask-sqlalchemy
-3. **Run the app:**
-   python app.py
+## Key Learnings
+* [cite_start]I learned how to create a database schema with relational tables like User, Department, and Appointments[cite: 15, 18].
+* [cite_start]I understood how to use One-to-Many relationships to link doctors to departments and patients to their records[cite: 22, 23].
+* [cite_start]I gained experience using the Python DateTime module to manage scheduling logic for morning and evening time slots[cite: 13].
+* [cite_start]I learned how to build role-based access to ensure users only see the dashboard related to their specific role[cite: 10].
