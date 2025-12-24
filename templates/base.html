@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Base Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+      body{
+        background-color: #e2e8f0;
+      }
+      .navbar {
+        background-color: #334155 !important;
+      }
+      #logo-text{
+        color: antiquewhite;
+      }
+      
+    </style>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand fs-4 fw-bold" id="logo-text" >Hospital Management App</a>
+            {% if session.get('role') %}
+            <span class="navbar-text ms-3 fs-5 fw-semibold" id="logo-text">Welcome {{ session.get('username') }}</span>
+            {% endif %}
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            
+            <ul class="navbar-nav ms-auto">
+                {% if session.get('role')=='patient' %}
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{ url_for('patient_history',id= session['id']) }}" id="logo-text">History</a>
+                </li>
+                {% endif %}
+                {% if 'username' in session %}
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{ url_for('logout')}}" id="logo-text">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/login" id="logo-text">Login</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/register" id="logo-text">Sign up</a>
+                </li>
+                {% endif %}
+            </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="border:2px">
+        {% block content %}
+        {% endblock %}
+    </div>
+    
+  </body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+   <div class="d-flex justify-content-center mt-2" >
+        <div class="card mt-5" style="width: 50%;">
+        <div class="card-body">
+            <h5 class="card-title">Add Doctor</h5>
+            <form method="POST">
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="username" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="mail" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="mail" name="email" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="pwd" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="pwd" name="password" required>
+                </div>
+
+                
+                <div class="mb-3">
+                    <label for="spl_id" class="form-label">Specilization Id</label>
+                    <input type="number" class="form-control" id="spl_id" name="spl_id" required>
+                </div>
+
+                <div class="text-center w-50 mx-auto">
+                    <input type="submit" class="btn btn-primary w-100" value="Add Doctor">
+                    <br><br>
+                </div>  
+                          
+            </form>
+
+        </div>
+    </div>
+   </div>
+    
+</body>
+</html>

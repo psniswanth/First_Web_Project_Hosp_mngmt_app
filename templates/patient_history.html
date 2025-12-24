@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <div class="container" id="main">
+    <div class="row justify-content-center">
+      <div class="col">
+        <h2 class="mb-3">Patient History</h2>
+        <h5>Patient Name: {{ pat.patient.username }}</h4>
+        <h5>Doctors Name: {{ pat.doctor.username }}</h4>
+        <h5 class="mb-5">Department: {{ pat.doctor.department.name }}</h4>
+        <div class="scrollable-box ">
+          <table class="table table-bordered">
+            <thead>
+              <th>Visit no.</th>
+              <th>Visit Type</th>
+              <th>Tests Done</th>
+              <th>Diagnosis</th>
+              <th>Prescription</th>
+            </thead>
+            <tbody>
+                {% for app in appointments %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ app.visit_type }}</td>
+                    <td>{{ app.tests_done }}</td>
+                    <td>{{ app.diagnosis }}</td>
+                    <td>{{ app.prescription }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
